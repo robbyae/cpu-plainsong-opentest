@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset=utf-8>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CPU-Plainsong</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <!-- my css -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- pyscript css-->
+  <link rel="stylesheet" type="text/css" href="https://pyscript.net/releases/2024.1.1/core.css">
+
+  <!-- tone.js -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- exsurge -->
+  <script defer type="text/javascript" src="js/exsurge.js"></script>
+  <!-- pyscript -->
+  <script defer src="https://pyscript.net/releases/2024.1.3/core.js" type="module"></script>
+  <script defer src="pyscript/compose.py" type="py" config="pyscript/pyscript.json"></script>
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- my js-->
+  <script defer src="js/main.js"></script>
+  <script defer src="js/speech.js"></script>
+</head>
+
+<body>
+  <div id="loading">
+    <p id="loading-text">Loading</p>
+  </div>
+  <div class="left-content">
+    <p id="title">CPU Plainsong</p>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="mode-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">mode 1</button>
+      <div class="dropdown-menu" aria-labelledby="mode-dropdown">
+        <a class="dropdown-item" href="#" onclick="showMode(this)">mode 1</a>
+        <a class="dropdown-item" href="#" onclick="showMode(this)">mode 2</a>
+        <a class="dropdown-item" href="#" onclick="showMode(this)">mode 3</a>
+        <a class="dropdown-item" href="#" onclick="showMode(this)">mode 4</a>
+        <a class="dropdown-item" href="#" onclick="showMode(this)">mode 5</a>
+        <a class="dropdown-item" href="#" onclick="showMode(this)">mode 6</a>
+        <a class="dropdown-item" href="#" onclick="showMode(this)">mode 7</a>
+        <a class="dropdown-item" href="#" onclick="showMode(this)">mode 8</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="form-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">syllabic</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#" onclick="showForm(this)">syllabic</a>
+        <a class="dropdown-item" href="#" onclick="showForm(this)">neumatic</a>
+        <a class="dropdown-item" href="#" onclick="showForm(this)">melismatic</a>
+      </div>
+    </div>
+    <button py-click="generate_song" class="btn btn-secondary" id="generate-button">generate</button>
+    <br>
+    <button class="btn btn-secondary" id="perform-button">perform</button>
+  </div>
+  <div class="speech-box">
+    <p id="speech-text"></p>
+  </div>
+  <div class="monks-images">
+    <img id="monks-closed" src="assets/img/monks-closed-hd.png"/>
+    <img id="monks-closed-noeyes" src="assets/img/monks-closed-noeyes-hd.png"/>
+    <img id="monks-open" src="assets/img/monks-open-hd.png"/>
+  </div>
+  <div id="svg-wrapper">
+    <div id="song-svg" class="song-svg"></div>
+  </div>
+  </div>
+</body>
+</html>
